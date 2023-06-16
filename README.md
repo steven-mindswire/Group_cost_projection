@@ -38,6 +38,11 @@ $$R(x)=e^{-\frac{a}{x \cdot (1+x)}}$$
 
 
 ## How to use:
+1. The script generates a numerical table (table 1) for a range of [max(0,x-10), x+10]. In case of assignees is less than the number of groups, table 1 limits the number of groups to assignees (column a in Table 1).
+2. Columns project time average rate of change and cost average rate of change can be viewed as empirical estimations of the discrete derivative of T(x) and C(x)
+3. Table 2 contains values of function M(x) in the range [max(a,x), x+10]. The function forms one of the decision boundaries.
+4. Table 3 indicates the minimum r1 required with given x and a for M(x) yield a non-negative margin.
+5. r1/r2 (0.5~1): used as the coefficient of efficiency within/between the group. A low coefficient can indicate the task is hard to parallelize and/or the group's cohesion is low.
 
 
 ### note: 
