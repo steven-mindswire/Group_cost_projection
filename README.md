@@ -59,7 +59,7 @@ $$\mathbf{y}=\mathbf{X}\beta+\varepsilon \qquad \qquad (2)$$
 
 We can estimate $\beta$ by solveing the non-negative least squares
 
-$$\hat{\beta}=argmax_\beta\|\mathbf{X}\beta-\mathbf{y}\|,\quad \beta\geq\mathbf{0} \qquad \qquad (3)$$
+$$\hat{\beta}=argmax_\beta\||\mathbf{X}\beta-\mathbf{y}\||_2^2,\quad \beta\geq\mathbf{0} \qquad \qquad (3)$$
 
 
 ## How to use:
