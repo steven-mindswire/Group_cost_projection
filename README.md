@@ -36,6 +36,31 @@ $R(x)$: Threshold r1, minimum r1 required to have a non-negative margin with giv
 
 $$R(x)=e^{-\frac{a}{x \cdot (1+x)}}$$
 
+### Regression approach to estimate r1/r2:
+If we apply natural logarithm to both side of $T(x)$, and shuffle the terms we get the following equation:
+
+$$ln(\frac{T(x)\cdot x \cdot c}{t})=-ln(r_1) \cdot (\frac{x}{a}-1)-ln(r_2) \cdot (a-1) \qquad \qquad (1)$$
+
+Let $T=[\tau_1,\tau_2,...,\tau_k]'$ be observed project times, $\mathbf{y}=[y_1,y_0,...,y_k]'$ where $y_i=ln(\frac{\tau_i+x_i+c_i}{t_i})$, $\beta=[-ln(r_1),-ln(r_2)]'$ where $r_1 \in (0,1],\quad r_2 \in (0,1]$ and
+
+$$
+\mathbf{X}_{k,2} = 
+ \begin{pmatrix}
+  \frac{x_1}{a_1}-1 & a_1-1\\
+  \frac{x_2}{a_2}-1 & a_2-1\\
+  \vdots  & \vdots\\
+  \frac{x_k}{a_k}-1 & a_k-1 
+ \end{pmatrix}
+$$
+
+The quation (1) then can be rewriten as a matrix formulation of a regression model
+
+$$\mathbf{y}=\mathbf{X}\beta+\varepsilon \qquad \qquad (2)$$
+
+We can estimate $\beta$ by solveing the non-negative least squares
+
+$$\hat{\beta}=argmax_\beta\|\mathbf{X}\beta-\mathbf{y}\|,\quad \beta\geq\mathbf{0} \qquad \qquad (3)$$
+
 
 ## How to use:
 1. The script generates a numerical table (table 1) for a range of [max(0,x-10), x+10]. In case of assignees is less than the number of groups, table 1 limits the number of groups to assignees (column a in Table 1).
